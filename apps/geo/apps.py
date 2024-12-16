@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AuxiliaresConfig(AppConfig):
+class GeoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.auxiliares'
+    name = 'apps.geo'
