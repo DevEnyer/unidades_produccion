@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.unidades_produccion'
+    'apps.unidad_produccion'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +61,10 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',  
-        'PORT': '5432',       
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=auxiliares,geo,public'
+        }       
     }
 
 }

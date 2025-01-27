@@ -5,4 +5,4 @@ class Serializer(serializers.ModelSerializer):
 
     class Meta:
         model   = Model
-        fields  = ['id','nombre']
+        fields  = ['id','descripcion']
