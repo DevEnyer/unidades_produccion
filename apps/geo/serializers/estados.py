@@ -1,8 +1,8 @@
 from rest_framework             import serializers
 from apps.geo.models.estados    import Estados as Model
 
-class Serializer(serializers.ModelSerializer):
+class EstadoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model   = Model
-        fields  = ['id','descripcion']
+        fields = '__all__'

@@ -1,7 +1,6 @@
 from django.db import models
 
 class Estados(models.Model):
-    id = models.IntegerField(primary_key=True)
     descripcion = models.CharField(blank=True, null=True)
 
     class Meta:

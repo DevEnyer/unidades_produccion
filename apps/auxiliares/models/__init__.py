@@ -1,1 +1,2 @@
-from apps.auxiliares.models.productividad import Productividad
+from apps.auxiliares.models.tipo_productividad import TipoProductividad
+from apps.auxiliares.models.tipo_establecimiento import TipoEstablecimiento
