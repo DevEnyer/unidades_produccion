@@ -6,7 +6,7 @@ class TipoProductividad(models.Model):
     estatus = models.BooleanField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table            = 'auxiliares\".\"tipo_productividad'
         verbose_name        = 'Tipo de Productividad'
         verbose_name_plural = 'Tipos de Productividad'

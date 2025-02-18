@@ -1,0 +1,17 @@
+from django.db import models
+from apps.auxiliares.models.tipo_responsable import TipoResponsable
+
+class Responsable(models.Model):
+    nombre = models.CharField("Nombre",blank=True, null=True)
+    apellido = models.CharField("Apellido",blank=True, null=True)
+    telefono = models.IntegerField("Teléfono")
+    tipo_responsable_id = models.ForeignKey(TipoResponsable, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'auxiliares\".\"responsable'
+        verbose_name        = 'Responsable'
+        verbose_name_plural = 'Responsables'
+
+    def __str__(self):
+        return self.descripcion

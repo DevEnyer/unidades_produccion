@@ -67,9 +67,9 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': 'localhost',  
         'PORT': '5432',
-        'OPTIONS': {
-            'options': '-c search_path=auxiliares,geo,public'
-        }       
+        # 'OPTIONS': {
+        #     'options': '-c search_path=auxiliares,geo,public'
+        # }       
     }
 
 }
