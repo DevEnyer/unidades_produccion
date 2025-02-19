@@ -4,3 +4,4 @@ from apps.auxiliares.models.tipo_responsable import TipoResponsable
 from apps.auxiliares.models.responsable import Responsable
 from apps.auxiliares.models.razon_social import RazonSocial
 from apps.auxiliares.models.entes_encomienda import EnteEncomienda
+from apps.auxiliares.models.unidad_responsanble import UnidadResponsable

@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     'drf_spectacular_sidecar',
     'apps.geo',
     'apps.auxiliares',
-    'apps.unidad_produccion',
+    'apps.produccion',
 ]
 
 MIDDLEWARE = [
