@@ -37,4 +37,4 @@ class AdminMunicipios(admin.ModelAdmin):
     list_per_page = 15
 
 
-admin.site.register(Municipio, AdminMunicipios)
+#admin.site.register(Municipio, AdminMunicipios)

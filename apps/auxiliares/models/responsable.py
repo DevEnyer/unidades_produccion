@@ -2,10 +2,10 @@ from django.db import models
 from apps.auxiliares.models.tipo_responsable import TipoResponsable
 
 class Responsable(models.Model):
-    nombre = models.CharField("Nombre",blank=True, null=True)
-    apellido = models.CharField("Apellido",blank=True, null=True)
-    telefono = models.IntegerField("Teléfono")
-    tipo_responsable_id = models.ForeignKey(TipoResponsable, on_delete=models.SET_NULL, null=True)
+    nombre = models.CharField("Nombre")
+    apellido = models.CharField("Apellido")
+    telefono = models.BigIntegerField("Teléfono")
+    tipo_responsable = models.ForeignKey(TipoResponsable, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         managed = True
@@ -14,4 +14,4 @@ class Responsable(models.Model):
         verbose_name_plural = 'Responsables'
 
     def __str__(self):
-        return self.descripcion
+        return f'{self.nombre} {self.apellido}'

@@ -1,9 +1,8 @@
 from django.db import models
 
 class TipoProductividad(models.Model):
-    id = models.IntegerField(primary_key=True)
-    descripcion = models.CharField(blank=True, null=True)
-    estatus = models.BooleanField(blank=True, null=True)
+    descripcion = models.CharField("Descripcion",blank=True, null=True)
+    estatus = models.BooleanField(default=True)
 
     class Meta:
         managed = True

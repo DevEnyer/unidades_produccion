@@ -2,7 +2,7 @@ from django.db import models
 
 class EnteEncomienda(models.Model):
     descripcion = models.CharField("Descripcion", blank=True, null=True)
-    estatus = models.BooleanField(blank=True, null=True)
+    estatus = models.BooleanField(default=True)
 
     class Meta:
         managed = True

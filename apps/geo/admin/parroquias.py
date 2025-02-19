@@ -35,4 +35,4 @@ class AdminParroquias(admin.ModelAdmin):
     list_per_page = 15
 
 
-admin.site.register(Parroquia, AdminParroquias)
+#admin.site.register(Parroquia, AdminParroquias)

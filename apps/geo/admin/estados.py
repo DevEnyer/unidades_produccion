@@ -29,4 +29,4 @@ class AdminEstados(admin.ModelAdmin):
     actions             = None
 
 
-admin.site.register(Estados, AdminEstados)
+#admin.site.register(Estados, AdminEstados)
