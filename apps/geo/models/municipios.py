@@ -7,7 +7,7 @@ class Municipio(models.Model):
     descripcion = models.CharField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'geo\".\"municipios'
         verbose_name        = 'Municipio'
         verbose_name_plural = 'Municipios'

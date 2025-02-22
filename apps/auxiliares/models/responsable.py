@@ -5,11 +5,11 @@ class Responsable(models.Model):
     nombre = models.CharField("Nombre")
     apellido = models.CharField("Apellido")
     telefono = models.BigIntegerField("Teléfono")
-    tipo_responsable = models.ForeignKey(TipoResponsable, on_delete=models.SET_NULL, null=True)
+    tipo_responsable = models.ForeignKey(TipoResponsable, on_delete=models.PROTECT)
 
     class Meta:
         managed = True
-        db_table = 'auxiliares\".\"responsable'
+        db_table = 'produccion\".\"responsable'
         verbose_name        = 'Responsable'
         verbose_name_plural = 'Responsables'
 

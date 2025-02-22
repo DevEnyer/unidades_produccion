@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class UnidadesProducccionConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.unidad_produccion'
+    name = 'apps.produccion'

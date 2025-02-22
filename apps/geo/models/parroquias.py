@@ -9,7 +9,7 @@ class Parroquia(models.Model):
     descripcion = models.CharField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'geo\".\"parroquias'
         verbose_name        = 'Parroquia'
         verbose_name_plural = 'Parroquias'

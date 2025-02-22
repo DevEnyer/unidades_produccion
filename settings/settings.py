@@ -71,7 +71,6 @@ DATABASES = {
         #     'options': '-c search_path=auxiliares,geo,public'
         # }       
     }
-
 }
 
 
