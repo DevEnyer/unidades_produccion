@@ -2,13 +2,14 @@ from django.db                  import models
 from apps.geo.models.estados    import Estados
 
 class Municipio(models.Model):
-    estado_id = models.IntegerField()
+    estado_id = models.ForeignKey(Estados, on_delete=models.PROTECT, related_name='estado')
     municipio_id = models.IntegerField()
     descripcion = models.CharField(blank=True, null=True)
 
     class Meta:
         managed = True
         db_table = 'geo\".\"municipios'
+        #unique_together = ['estado_id', 'municipio_id']
         verbose_name        = 'Municipio'
         verbose_name_plural = 'Municipios'
 

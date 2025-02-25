@@ -6,7 +6,7 @@ class TipoAlmacenaje(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'produccion\".\"tipo_almacenaje'
+        db_table = 'auxiliares\".\"tipo_almacenaje'
         verbose_name        = 'Tipo Almacenaje'
         verbose_name_plural = 'Tipos Almacenajes'
 

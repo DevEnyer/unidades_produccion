@@ -5,17 +5,21 @@ from apps.auxiliares.models.entes_encomienda import EnteEncomienda
 from apps.auxiliares.models.razon_social import RazonSocial
 from apps.auxiliares.models.responsable import Responsable
 
+from apps.geo.models.estados import Estados
+from apps.geo.models.municipios import Municipio
+from apps.geo.models.parroquias import Parroquia
+
 from apps.produccion.models.produccion import Produccion
 
 class UnidadProduccion(models.Model):
     nombre = models.CharField()
-    estado = models.IntegerField()
-    municipio = models.IntegerField()
-    parroquia = models.IntegerField()
+    estado = models.ForeignKey(Estados, on_delete=models.PROTECT)
+    municipio = models.ForeignKey(Municipio, on_delete=models.PROTECT)
+    parroquia = models.ForeignKey(Parroquia, on_delete=models.PROTECT)
     direccion = models.CharField('Dirección')
     tipos_establecimiento = models.ForeignKey(TipoEstablecimiento, on_delete=models.PROTECT)
     descripcion_actividad = models.TextField('Descripción de la actividad')
-    razon_social = models.ForeignKey(RazonSocial, related_name='razon_social_unidad' ,on_delete=models.PROTECT)
+    razon_social = models.ForeignKey(RazonSocial, related_name='razon_social_unidad' ,on_delete=models.PROTECT, help_text='Razon social de la empresa que opera')
     ente_encomienda = models.ForeignKey(EnteEncomienda, on_delete=models.PROTECT)
     fecha_encomienda = models.DateField(auto_now=False, auto_now_add=False)
     convenio = models.TextField()
