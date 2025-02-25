@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y%j&z(8vzos7et_h10(_h3u$*hsgb@v+gg=!eww%1gn00hh4ro'
@@ -40,7 +41,7 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],  # Asegúrate de incluir la carpeta de plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,7 +110,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'media/'
+STATICFILES_DIRS    = [os.path.join(BASE_DIR, 'static/'),]
+STATIC_ROOT         = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -127,4 +129,12 @@ SPECTACULAR_SETTINGS = {
     'SWAGGER_UI_DIST': 'SIDECAR', 
     'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
     'REDOC_DIST': 'SIDECAR',
+}
+
+JAZZMIN_SETTINGS = {
+    "site_logo": "img/logo_cuspal.png",  # Ruta al logo en tu carpeta static
+    "login_logo": "img/logo_cuspal.png",
+    "site_title": "Admin del sistema",  # Título del sitio
+    "welcome_sign": "Bienvenido",  # Mensaje de bienvenida
+    "custom_css": "css/custom_admin.css",  # Ruta al archivo CSS
 }

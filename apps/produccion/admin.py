@@ -22,7 +22,4 @@ class UnidadProduccionAdmin(admin.ModelAdmin):
     list_display_links  = None
     actions             = None
 
-    class Media:
-        js  =   ('js/filtro.js',) 
-
 admin.site.register(SituacionJuridica)
