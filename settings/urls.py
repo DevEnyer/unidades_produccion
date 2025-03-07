@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from apps.redireccion.views import inicio
 
 
 urlpatterns = [
+    path('', inicio , name='inicio'),
     path('admin/', admin.site.urls),
     path('api/geo/', include('apps.geo.urls')),
     #path('api/auxiliares/', include('apps.auxiliares.urls')),

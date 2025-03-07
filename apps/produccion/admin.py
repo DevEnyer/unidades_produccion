@@ -16,7 +16,7 @@ admin.site.register(Produccion)
 # admin.site.register(UnidadProduccion)
 @admin.register(UnidadProduccion)
 class UnidadProduccionAdmin(admin.ModelAdmin):
-    list_display        = ('nombre','estado','municipio','parroquia','tipos_establecimiento','razon_social','ente_encomienda')
+    list_display        = ('nombre','estado','tipos_establecimiento')
     #list_filter         = ('motivo',)
     search_fields       = []
     list_display_links  = None

@@ -132,9 +132,63 @@ SPECTACULAR_SETTINGS = {
 }
 
 JAZZMIN_SETTINGS = {
-    "site_logo": "img/logo_cuspal.png",  # Ruta al logo en tu carpeta static
+    "site_logo": "img/logito_mejorado.png",  # Ruta al logo en tu carpeta static
     "login_logo": "img/logo_cuspal.png",
+    "site_header": "Panel Administrativo",  # Encabezado del admin
     "site_title": "Admin del sistema",  # Título del sitio
-    "welcome_sign": "Bienvenido",  # Mensaje de bienvenida
+    "site_brand" : "Administración",
+    "welcome_sign": "Bienvenido al Sistema de Registro y Control de unidades productivas",  # Mensaje de bienvenida
     "custom_css": "css/custom_admin.css",  # Ruta al archivo CSS
+    "related_modal_active": True,
+    "order_with_respect_to": ["auth", "produccion","auxiliares" ],
+    "hide_apps": ["auth"],
+    "topmenu_links": [
+        {"name": "Inicio",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"app": "auth"},
+    ],
+    "icons": {
+        "auth": "fas fa-users-cog",  # Ícono para la app de autenticación
+        "auth.User": "fas fa-user",  # Ícono para el modelo User
+        "auth.Group": "fas fa-users",  # Ícono para el modelo Group
+        "produccion.SituacionJuridica": "fa-solid fa-scale-balanced",  # Ícono para un modelo personalizado
+        "produccion.Almacenaje" : "fa-solid fa-boxes-stacked",
+        "produccion.UnidadProduccion" : "fa-solid fa-warehouse",
+        "produccion.Produccion" : "fa-solid fa-arrow-trend-up",
+        "auxiliares.Responsable": "fa-solid fa-people-roof",
+        "auxiliares.RazonSocial": "fa-solid fa-book",
+    },
+}
+
+#JAZZMIN_SETTINGS["show_ui_builder"] = True
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": False,
+    "accent": "accent-primary",
+    "navbar": "navbar-primary navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-light-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "dark_mode_theme": None,
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
 }

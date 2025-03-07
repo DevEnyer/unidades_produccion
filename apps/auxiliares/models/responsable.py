@@ -9,7 +9,7 @@ class Responsable(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'produccion\".\"responsable'
+        db_table = 'auxiliares\".\"responsable'
         verbose_name        = 'Responsable'
         verbose_name_plural = 'Responsables'
 
