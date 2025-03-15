@@ -6,8 +6,9 @@ from apps.auxiliares.models.responsable import Responsable
 from apps.auxiliares.models.razon_social import RazonSocial
 from apps.auxiliares.models.estatus_legal import EstatusLegal
 
-# admin.site.register(TipoEstablecimiento)
-# admin.site.register(TipoProductividad)
+#admin.site.register(TipoEstablecimiento)
+#admin.site.register(TipoProductividad)
+#admin.site.register(TipoAlmacenaje)
 # admin.site.register(TipoResponsable)
 @admin.register(Responsable)
 class ResponsableAdmin(admin.ModelAdmin):
@@ -17,5 +18,5 @@ class ResponsableAdmin(admin.ModelAdmin):
     list_display_links  = None
     actions             = None
 admin.site.register(RazonSocial)
-admin.site.register(EstatusLegal)
+#admin.site.register(EstatusLegal)
 

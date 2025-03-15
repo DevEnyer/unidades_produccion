@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 
+from import_export.formats.base_formats import XLSX
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y%j&z(8vzos7et_h10(_h3u$*hsgb@v+gg=!eww%1gn00hh4ro'
 DEBUG = True
@@ -21,6 +23,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'drf_spectacular_sidecar',
+    'import_export',
     'apps.geo',
     'apps.auxiliares',
     'apps.produccion',
@@ -192,3 +195,5 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success"
     }
 }
+
+IMPORT_EXPORT_FORMATS = [XLSX]

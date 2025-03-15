@@ -1,0 +1,5 @@
+body{
+    background-image: url('/static/img/fondo_cuspal.jpeg');
+    background-size: cover;
+    background-position: center;
+}

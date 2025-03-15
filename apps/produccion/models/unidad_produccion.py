@@ -20,17 +20,23 @@ class UnidadProduccion(models.Model):
     tipos_establecimiento = models.ForeignKey(TipoEstablecimiento, on_delete=models.PROTECT)
     descripcion_actividad = models.TextField('Descripción de la actividad')
     fecha_encomienda = models.DateField(auto_now=False, auto_now_add=False)
-    convenio = models.TextField()
+    convenio = models.CharField()
     estatus = models.BooleanField(default=True)
-    productividad_activa = models.ForeignKey(Produccion, on_delete=models.PROTECT)
-    porcentaje_actividad = models.FloatField()
+    productividad_activa = models.BooleanField(default=True)
+    #porcentaje_actividad = models.FloatField()
     cantidad_trabajadores = models.IntegerField()
-    observaciones = models.TextField()
+    observaciones = models.TextField(null=True, blank=True)
     responsables = models.ManyToManyField(
         Responsable,
         through='UnidadResponsable',
         related_name='responsables'
     )
+
+    def get_responsables(self):
+        return ", ".join([str(responsable) for responsable in self.responsables.all()])
+    
+    get_responsables.short_description = 'Responsables'
+
 
     class Meta:
         managed = True

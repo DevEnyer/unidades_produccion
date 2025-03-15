@@ -1,0 +1,14 @@
+/* admin_custom.css */
+.field-prefijo, .field-telefono {
+    display: inline-block;
+    width: 48%;  /* Ajusta el ancho de los campos */
+    margin-right: 2%;  /* Espacio entre los campos */
+    vertical-align: top;  /* Alinea los campos en la parte superior */
+}
+
+/* Ajusta el contenedor de los campos para que estén en la misma línea */
+.field-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Espacio entre los campos */
+}

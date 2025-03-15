@@ -14,4 +14,4 @@ class Responsable(models.Model):
         verbose_name_plural = 'Responsables'
 
     def __str__(self):
-        return f'{self.nombre} {self.apellido}'
+        return f'{self.nombre} {self.apellido} ({self.tipo_responsable})'
