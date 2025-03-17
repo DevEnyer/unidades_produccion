@@ -84,12 +84,12 @@ class SituacionJuridicaAdmin(ExportActionModelAdmin):
     list_display = ('razon_social', 'estatus_legal', 'observacion')
     fieldsets = (
         (None, {
-            'fields': ('unidad', 'estatus_legal', 'razon_social', 'duracion', 'convenio', ('prefijo', 'telefono'), 'observacion'),
+            'fields': ('unidad', 'estatus_legal', 'razon_social', 'duracion', 'porcentaje_participacion', 'observacion'),
         }),
     )
 
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        form.base_fields['prefijo'].label = 'Teléfono'  # Cambiar "Prefijo" por "Teléfono"
-        form.base_fields['telefono'].label = ''  # Eliminar la etiqueta "Teléfono"
-        return form
+    # def get_form(self, request, obj=None, **kwargs):
+    #     form = super().get_form(request, obj, **kwargs)
+    #     form.base_fields['prefijo'].label = 'Teléfono'  # Cambiar "Prefijo" por "Teléfono"
+    #     form.base_fields['telefono'].label = ''  # Eliminar la etiqueta "Teléfono"
+    #     return form

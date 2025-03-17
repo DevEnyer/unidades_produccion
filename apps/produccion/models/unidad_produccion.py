@@ -6,22 +6,22 @@ from apps.auxiliares.models.razon_social import RazonSocial
 from apps.auxiliares.models.responsable import Responsable
 
 from apps.geo.models.estados import Estados
-#from apps.geo.models.municipios import Municipio
-#from apps.geo.models.parroquias import Parroquia
+from apps.geo.models.municipios import Municipio
+from apps.geo.models.parroquias import Parroquia
 
 from apps.produccion.models.produccion import Produccion
 
 class UnidadProduccion(models.Model):
     nombre = models.CharField()
     estado = models.ForeignKey(Estados, on_delete=models.PROTECT)
-    #municipio = models.ForeignKey(Municipio, on_delete=models.PROTECT)
-    #parroquia = models.ForeignKey(Parroquia, on_delete=models.PROTECT)
+    municipio = models.ForeignKey(Municipio, on_delete=models.PROTECT)
+    parroquia = models.ForeignKey(Parroquia, on_delete=models.PROTECT)
     direccion = models.CharField('Dirección')
     tipos_establecimiento = models.ForeignKey(TipoEstablecimiento, on_delete=models.PROTECT)
     descripcion_actividad = models.TextField('Descripción de la actividad')
-    fecha_encomienda = models.DateField(auto_now=False, auto_now_add=False)
-    convenio = models.CharField()
-    estatus = models.BooleanField(default=True)
+    #fecha_encomienda = models.DateField(auto_now=False, auto_now_add=False)
+    #convenio = models.CharField()
+    #activo = models.BooleanField(default=True)
     productividad_activa = models.BooleanField(default=True)
     #porcentaje_actividad = models.FloatField()
     cantidad_trabajadores = models.IntegerField()
