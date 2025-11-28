@@ -67,9 +67,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'unidades_productivas',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_Gf4reHTD3iYM',
+        'HOST': 'ep-raspy-union-a25dpbib-pooler.eu-central-1.aws.neon.tech',  
         'PORT': '5432',
         # 'OPTIONS': {
         #     'options': '-c search_path=auxiliares,geo,public'

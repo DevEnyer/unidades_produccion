@@ -19,11 +19,7 @@ class UnidadProduccion(models.Model):
     direccion = models.CharField('Dirección')
     tipos_establecimiento = models.ForeignKey(TipoEstablecimiento, on_delete=models.PROTECT)
     descripcion_actividad = models.TextField('Descripción de la actividad')
-    #fecha_encomienda = models.DateField(auto_now=False, auto_now_add=False)
-    #convenio = models.CharField()
-    #activo = models.BooleanField(default=True)
     productividad_activa = models.BooleanField(default=True)
-    #porcentaje_actividad = models.FloatField()
     cantidad_trabajadores = models.IntegerField()
     observaciones = models.TextField(null=True, blank=True)
     responsables = models.ManyToManyField(
