@@ -1,0 +1,17 @@
+body:not(.layout-fixed) {
+    .main-sidebar {
+      height: inherit;
+      min-height: 93%;
+      position: absolute;
+      top: 80px;
+  
+      .sidebar {
+        overflow-y: auto;
+      }
+    }
+  }
+
+.login .form-row #id_password {
+  display: none;
+}
+  
