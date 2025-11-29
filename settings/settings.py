@@ -2,12 +2,13 @@ from pathlib import Path
 import os
 
 from import_export.formats.base_formats import XLSX
+from decouple import config, Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-y%j&z(8vzos7et_h10(_h3u$*hsgb@v+gg=!eww%1gn00hh4ro'
-DEBUG = True
+SECRET_KEY = config("SECRET_KEY")
+DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -66,11 +67,11 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'unidades_productivas',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_Gf4reHTD3iYM',
-        'HOST': 'ep-raspy-union-a25dpbib-pooler.eu-central-1.aws.neon.tech',  
-        'PORT': '5432',
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),  
+        'PORT': config("DB_PORT"),
         # 'OPTIONS': {
         #     'options': '-c search_path=auxiliares,geo,public'
         # }       
