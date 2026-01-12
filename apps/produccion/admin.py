@@ -4,24 +4,29 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from import_export import resources, fields
-from import_export.admin import ImportExportModelAdmin, ExportActionModelAdmin
+from import_export.admin import ExportActionModelAdmin
 
 from apps.produccion.models.almacenaje import Almacenaje
 from apps.produccion.models.produccion import Produccion
 from apps.produccion.models.unidad_produccion import UnidadProduccion, UnidadResponsable
 from apps.produccion.models.situacion_juridica import SituacionJuridica
 
-class UnidadProduccionResource(resources.ModelResource):
+class UnidadProduccionResource(resources.ModelResource): # Clase para definir la exportación de datos con Import-Export
     estado = fields.Field(attribute='estado__descripcion', column_name='Estado')
+    municipio = fields.Field(attribute='municipio__descripcion', column_name='Municipio')
+    parroquia = fields.Field(attribute='parroquia__descripcion', column_name='Parroquia')
     tipos_establecimiento = fields.Field(attribute='tipos_establecimiento__descripcion', column_name='Tipo establecimiento')
     responsables = fields.Field(column_name='Responsables')
     class Meta:
         model = UnidadProduccion
+    
+    def dehydrate_responsables(self, unidad):
+        # Aquí usamos el método que ya creaste inteligentemente en tu modelo
+        return unidad.get_responsables()
 
 class AdminUnidadResponsableInline(admin.TabularInline):
     model = UnidadResponsable
     extra = 0
-
 @admin.register(UnidadProduccion)
 class UnidadProduccionAdmin(ExportActionModelAdmin):
     inlines = [AdminUnidadResponsableInline,]

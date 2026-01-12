@@ -149,7 +149,12 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bienvenido al Sistema de Registro y Control de unidades productivas",  # Mensaje de bienvenida
     "custom_css": "css/custom_admin.css",  # Ruta al archivo CSS
     "related_modal_active": False,
-    "order_with_respect_to": ["auth", "produccion","auxiliares" ],
+    "order_with_respect_to": [
+        "auth", 
+        "produccion",
+        "produccion.UnidadProduccion",
+        "auxiliares", 
+        ],
     "hide_apps": ["auth"],
     "topmenu_links": [
         {"name": "Inicio",  "url": "admin:index", "permissions": ["auth.view_user"]},
