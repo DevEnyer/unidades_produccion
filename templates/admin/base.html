@@ -326,7 +326,7 @@
         {% endblock %}
     </div>
 
-{% block footer %}
+{% comment %} {% block footer %}
     {% if not is_popup %}
         <footer class="main-footer {{ jazzmin_ui.footer_classes }}">
             <div class="float-right d-none d-sm-inline">
@@ -340,7 +340,7 @@
             {% include 'jazzmin/includes/ui_builder_panel.html' %}
         {% endif %}
     {% endif %}
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 </div>
 
