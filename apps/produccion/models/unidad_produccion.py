@@ -12,7 +12,7 @@ from apps.geo.models.parroquias import Parroquia
 from apps.produccion.models.produccion import Produccion
 
 class UnidadProduccion(models.Model):
-    nombre = models.CharField()
+    nombre = models.CharField('Nombre')
     estado = models.ForeignKey(Estados, on_delete=models.PROTECT)
     municipio = models.ForeignKey(Municipio, on_delete=models.PROTECT)
     parroquia = models.ForeignKey(Parroquia, on_delete=models.PROTECT)
@@ -20,8 +20,8 @@ class UnidadProduccion(models.Model):
     tipos_establecimiento = models.ForeignKey(TipoEstablecimiento, on_delete=models.PROTECT)
     descripcion_actividad = models.TextField('Descripción de la actividad')
     productividad_activa = models.BooleanField(default=True)
-    cantidad_trabajadores = models.IntegerField()
-    observaciones = models.TextField(null=True, blank=True)
+    cantidad_trabajadores = models.IntegerField('Trabajadores')
+    observaciones = models.TextField('Observaciones', null=True, blank=True)
     responsables = models.ManyToManyField(
         Responsable,
         through='UnidadResponsable',

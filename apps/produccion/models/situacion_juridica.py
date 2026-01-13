@@ -20,7 +20,7 @@ class SituacionJuridica(models.Model):
     estatus_legal = models.ForeignKey(EstatusLegal, on_delete=models.PROTECT)
     razon_social = models.ForeignKey(RazonSocial, on_delete=models.PROTECT, related_name= 'rs_sitacion_juridica')
     duracion = models.CharField('Duración (Años)', max_length=2,validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')], help_text="Duración de contrato")
-    porcentaje_participacion = models.CharField("Porcentaje de participación CUSPAL",max_length=2, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')])
+    porcentaje_participacion = models.CharField("Porcentaje de participación CUSPAL",max_length=3, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')])
     #prefijo = models.CharField(choices=prefijo)
     #telefono = models.CharField("Teléfono", max_length=7, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')], blank=True, null=True)
     observacion = models.TextField("Observación",blank= True, null=True)
