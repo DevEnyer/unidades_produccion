@@ -1,11 +1,12 @@
 from django.db import models
+from django.core.validators import RegexValidator
 from apps.auxiliares.models.tipo_responsable import TipoResponsable
 
 class RazonSocial(models.Model):
-    descripcion = models.CharField("Descripcion", blank=True)
-    rif = models.CharField("RIF", max_length=11, blank= True)
-    direccion = models.CharField("Dirección", blank=True)
-    telefono = models.BigIntegerField("Teléfono")
+    descripcion = models.CharField("Descripción")
+    rif = models.CharField("RIF", max_length=11)
+    direccion = models.CharField("Dirección")
+    telefono = models.CharField("Teléfono", max_length=11, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')])
     fecha_registro = models.DateField("Fecha de Registro", auto_now=False, auto_now_add=False, null= True)
     estatus = models.BooleanField(default=True)
 

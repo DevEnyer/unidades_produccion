@@ -5,7 +5,7 @@ from apps.auxiliares.models.tipo_responsable import TipoResponsable
 class Responsable(models.Model):
     nombre = models.CharField("Nombre")
     apellido = models.CharField("Apellido")
-    telefono = models.CharField("Teléfono", max_length=2, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')], help_text="Duración de contrato")
+    telefono = models.CharField("Teléfono", max_length=11, validators=[RegexValidator(r'^\d+$', 'Solo se permiten números.')])
     tipo_responsable = models.ForeignKey(TipoResponsable, on_delete=models.PROTECT)
 
     class Meta:
