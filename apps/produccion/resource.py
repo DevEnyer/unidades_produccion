@@ -10,7 +10,7 @@ class UnidadProduccionResource(resources.ModelResource): # Clase para definir la
     direccion = fields.Field(attribute='direccion', column_name='Dirección')
     tipos_establecimiento = fields.Field(attribute='tipos_establecimiento__descripcion', column_name='Tipo establecimiento')
     descripcion_actividad = fields.Field(attribute='descripcion_actividad', column_name='Descripción de la actividad')
-    productividad_activa = fields.Field(attribute='productividad_activa', column_name='Productividad')
+    #productividad_activa = fields.Field(attribute='productividad_activa', column_name='Productividad')
     cantidad_trabajadores = fields.Field(attribute='cantidad_trabajadores', column_name='Trabajadores')
     responsables = fields.Field(column_name='Responsables')
     observaciones = fields.Field(attribute='observaciones', column_name='Observaciones')
@@ -24,7 +24,7 @@ class UnidadProduccionResource(resources.ModelResource): # Clase para definir la
             'direccion', 
             'tipos_establecimiento', 
             'descripcion_actividad', 
-            'productividad_activa', 
+            #'productividad_activa', 
             'cantidad_trabajadores', 
             'responsables', 
             'observaciones'
