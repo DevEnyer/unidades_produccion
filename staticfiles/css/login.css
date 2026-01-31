@@ -7,5 +7,5 @@ body.jazzmin-login-page {
     flex-direction: column;
     height: 100vh;
     -ms-flex-pack: center;
-    justify-content: space-between;
+    justify-content: center;
 }

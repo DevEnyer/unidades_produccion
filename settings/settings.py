@@ -146,7 +146,7 @@ JAZZMIN_SETTINGS = {
     "site_header": "Panel Administrativo",  # Encabezado del admin
     "site_title": "Admin del sistema",  # Título del sitio
     "site_brand" : "Administración",
-    "welcome_sign": "Bienvenido al Sistema de Registro y Control de unidades productivas",  # Mensaje de bienvenida
+    "welcome_sign": "",  # Mensaje de bienvenida
     "custom_css": "css/custom_admin.css",  # Ruta al archivo CSS
     "related_modal_active": False,
     "order_with_respect_to": [
